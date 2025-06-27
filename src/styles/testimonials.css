@@ -1,0 +1,130 @@
+/* --- Ajustes para o Carrossel de Testemunhos --- */
+#testimonials_carousel {
+    width: 100%;
+    overflow: hidden; /* Esconde os cards que estão fora da visualização */
+}
+
+#feedbacks {
+    display: flex; /* Coloca os feedbacks em linha horizontal */
+    transition: transform 0.5s ease-in-out; /* Transição suave para o movimento */
+}
+
+#feedbacks .feedback {
+    flex: 0 0 auto; /* Impede que os cards encolham ou cresçam desproporcionalmente */
+    width: calc(100% - 30px); /* Largura dos cards (ajuste conforme necessário) */
+    max-width:  600px; /* Largura máxima dos cards */
+    margin-right: 30px; /* Espaço entre os cards */
+    border-radius: 15px; /* Levemente mais arredondado que o container */
+    box-shadow: 0 8px 20px rgba(0, 200, 83, 0.3); /* Sombra um pouco mais suave */
+    padding: 30px; /* Aumentei o padding interno */
+    background-color: #222; /* Mantém o fundo escuro */
+    color: #eee;
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo do card em coluna */
+    align-items: center; /* Centraliza avatar e conteúdo */
+    text-align: center;
+    gap: 20px;
+}
+
+#feedbacks .feedback:last-child {
+    margin-right: 0; /* Remove a margem do último card */
+}
+
+#feedbacks .feedback_avatar {
+    width: 80px; /* Reduzi um pouco o tamanho do avatar no card */
+    height: 80px;
+    border-width: 2px; /* Borda um pouco menor */
+    border-radius: 50%;
+}
+
+/* Ajustes no hover do card no carrossel */
+#feedbacks .feedback:hover {
+    background-color: rgba(0, 200, 83, 0.1); /* Hover sutil */
+    color: #eee; /* Mantém a cor do texto */
+    box-shadow: 0 12px 30px rgba(0, 200, 83, 0.5); /* Sombra mais proeminente no hover */
+    transform: scale(1.02); /* Leve aumento no hover */
+}
+
+#feedbacks .feedback_content p {
+    font-size: 1rem; /* Ajuste no tamanho da fonte do texto */
+}
+
+/* --- Ocultar a imagem em telas menores (mantido) --- */
+@media screen and (max-width: 1170px) {
+    #testimonials {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+
+    #testimonials_image {
+        display: none;
+    }
+
+    #testimonials .section_subtitle {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    #testimonials_content {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #testimonials .section_subtitle {
+        font-size: 2rem;
+    }
+
+    #feedbacks .feedback {
+        width: 95%; /* Cards ocupam mais largura em telas pequenas */
+        padding: 20px;
+    }
+
+    #feedbacks .feedback_content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 1170px) {
+    #testimonials {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+
+    #testimonials_image {
+        display: none;
+    }
+
+    #testimonials .section_subtitle {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    #testimonials_content {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #testimonials .section_subtitle {
+        font-size: 2rem;
+    }
+
+    .feedback {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .feedback_avatar {
+        margin-bottom: 12px;
+    }
+}

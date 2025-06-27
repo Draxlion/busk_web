@@ -1,0 +1,178 @@
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: var(--dark-bg-medium); /* Cor de fundo escura usando variável */
+    padding: 30px 5%; /* Padding maior para mais espaço */
+    margin-top: 60px; /* Mais espaço acima do rodapé */
+    box-shadow: 0 -5px 15px var(--shadow-green-medium); /* Sombra neon mais pronunciada */
+    color: var(--text-light); /* Cor do texto padrão para o rodapé */
+}
+
+#footer_content {
+    display: flex;
+    justify-content: space-around; /* Distribui o espaço entre as colunas */
+    align-items: flex-start; /* Alinha o topo das colunas */
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    gap: 30px; /* Espaço entre as colunas */
+    max-width: 1200px; /* Limita a largura do conteúdo do rodapé */
+    margin: 0 auto 40px auto; /* Centraliza o conteúdo e adiciona margem inferior */
+    padding-bottom: 20px; /* Padding interno para separar do copyright */
+    border-bottom: 1px solid rgba(0, 200, 83, 0.2); /* Linha divisória sutil */
+}
+
+#footer_logo img {
+    max-width: 180px; /* Define um tamanho máximo para a logo */
+    height: auto;
+    display: block;
+    margin-bottom: 20px; /* Espaço abaixo da logo */
+    filter: drop-shadow(0 0 8px var(--primary-green-strong)); /* Efeito neon na logo */
+}
+
+#footer_content h3 {
+    font-size: 1.3rem;
+    color: var(--primary-green-light); /* Título das colunas em verde neon */
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0, 200, 83, 0.3);
+}
+
+#footer_links,
+#footer_contact {
+    list-style: none; /* Remove marcadores de lista */
+    padding: 0;
+    margin: 0;
+    flex: 1; /* Permite que essas colunas cresçam */
+    min-width: 180px; /* Largura mínima para cada coluna */
+}
+
+#footer_links li,
+#footer_contact li {
+    margin-bottom: 12px;
+}
+
+#footer_links a,
+#footer_contact a {
+    color: var(--text-medium); /* Cor de links padrão */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    gap: 8px; /* Espaço entre ícone e texto */
+}
+
+#footer_links a:hover,
+#footer_contact a:hover {
+    color: var(--primary-green); /* Cor neon no hover */
+    text-shadow: 0 0 8px rgba(0, 200, 83, 0.6);
+}
+
+#footer_contact a i {
+    font-size: 1.1rem; /* Tamanho dos ícones de contato */
+    color: var(--primary-green); /* Cor dos ícones */
+}
+
+#footer_social_media {
+    flex: 1; /* Permite que a coluna de redes sociais cresça */
+    min-width: 160px; /* Largura mínima */
+    text-align: center; /* Centraliza ícones em telas menores */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centraliza ícones */
+    gap: 15px; /* Espaço entre os ícones */
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: var(--text-light); /* Cor dos ícones sociais */
+    font-size: 2rem; /* Tamanho dos ícones sociais */
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-green); /* Cor neon no hover */
+    transform: translateY(-5px) scale(1.1); /* Efeito de levantamento */
+    text-shadow: 0 0 15px rgba(0, 200, 83, 0.8);
+}
+
+#footer_bottom {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#copyright {
+    color: var(--text-medium); /* Cor mais suave para o copyright */
+    font-weight: 400; /* Peso de fonte normal */
+    font-size: 0.9rem; /* Tamanho de fonte um pouco menor */
+    font-family: var(--font-body); /* Usando sua variável de fonte principal */
+}
+
+/* --- Responsividade do Rodapé --- */
+@media screen and (max-width: 768px) {
+    #footer_content {
+        flex-direction: column; /* Empilha todas as colunas */
+        align-items: center; /* Centraliza itens na coluna */
+        text-align: center; /* Centraliza texto */
+        gap: 40px; /* Mais espaço entre as seções empilhadas */
+        margin-bottom: 30px;
+    }
+
+    #footer_logo img {
+        margin: 0 auto 20px auto; /* Centraliza a logo */
+    }
+
+    #footer_links,
+    #footer_contact,
+    #footer_social_media {
+        min-width: unset; /* Remove largura mínima */
+        width: 100%; /* Ocupa a largura total */
+    }
+
+    #footer_links h3,
+    #footer_contact h3,
+    #footer_social_media h3 {
+        margin-bottom: 15px; /* Ajusta margem dos títulos */
+    }
+
+    #footer_links a,
+    #footer_contact a {
+        justify-content: center; /* Centraliza links com ícones */
+    }
+
+    .social-icons {
+        justify-content: center; /* Garante centralização dos ícones */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        padding: 20px 3%; /* Menos padding em telas muito pequenas */
+    }
+
+    #footer_content {
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    #footer_logo img {
+        max-width: 150px; /* Logo menor em telas muito pequenas */
+    }
+
+    #footer_content h3 {
+        font-size: 1.2rem;
+    }
+
+    #footer_links a,
+    #footer_contact a {
+        font-size: 0.85rem;
+    }
+
+    .social-icons a {
+        font-size: 1.8rem;
+    }
+
+    #copyright {
+        font-size: 0.8rem;
+    }
+}

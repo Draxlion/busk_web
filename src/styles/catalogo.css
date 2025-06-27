@@ -1,0 +1,366 @@
+/* --- Seção de Catálogo (#menu) --- */
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinhar itens ao topo para deixar espaço para filtros */
+    min-height: 100vh;
+    background-color: #121212; /* Fundo escuro */
+    padding: 80px 0 40px; /* Mais padding no topo para o header fixo e espaço */
+    color: #f0f0f0; /* Cor de texto padrão */
+}
+
+/* Título e Subtítulo da Seção (adicionados, assumindo que você os terá no HTML) */
+#menu .section_title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#menu .section_title span {
+    color: #00C853;
+}
+
+#menu .section_subtitle {
+    font-size: 1.3rem;
+    color: #cfcfcf;
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* --- Área de Filtros e Categorias --- */
+#menu_filters {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os filtros quebrem linha */
+    justify-content: center; /* Centraliza os grupos de filtros */
+    gap: 30px; /* Espaçamento entre os grupos de filtros */
+    margin-bottom: 50px; /* Espaçamento abaixo dos filtros */
+    padding: 20px 0;
+    border-radius: 15px;
+    background-color: #1a1a1a; /* Fundo levemente diferente para a área de filtros */
+    box-shadow: 0 0 15px rgba(0, 200, 83, 0.3);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column; /* Título acima dos botões */
+    align-items: center;
+    gap: 15px;
+}
+
+.filter-group-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00C853; /* Cor do título do grupo */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-btn {
+    background-color: #272727; /* Cor de fundo do botão */
+    color: #f0f0f0; /* Cor do texto */
+    padding: 10px 20px;
+    border: 1px solid #333; /* Borda sutil */
+    border-radius: 25px; /* Botões arredondados */
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.filter-btn:hover {
+    background-color: #00C853; /* Fundo verde neon no hover */
+    color: #121212; /* Texto escuro no hover */
+    border-color: #00C853;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 200, 83, 0.5);
+}
+
+.filter-btn.active {
+    background-color: #00C853; /* Botão ativo em verde neon */
+    color: #121212;
+    border-color: #00C853;
+    box-shadow: 0 0 15px rgba(0, 200, 83, 0.7);
+    transform: translateY(-2px);
+}
+
+/* --- Contêiner dos Produtos (allbox) --- */
+#allbox {
+    display: flex;
+    flex-wrap: wrap; /* Garante que os cards quebrem linha */
+    justify-content: center; /* Centraliza os cards */
+    gap: 30px; /* Espaçamento maior entre os cards */
+    width: 100%; /* Ocupa 100% da largura do pai */
+    max-width: 1200px; /* Limite de largura para o grid de produtos */
+}
+
+/* Remover #primary se não for mais usado para agrupamento */
+#primary {
+    display: contents; /* Faz com que os filhos sejam renderizados diretamente dentro de #allbox */
+}
+
+/* Estilos dos Cards de Produto (boxs) */
+.boxs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    width: 100%; /* Inicia com 100% no mobile */
+    max-width: 300px; /* Ajustado para se encaixar melhor em grids de 3 ou 4 */
+    padding: 25px; /* Mais padding para um visual premium */
+    background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+    box-shadow: 0 0 15px 3px rgba(0, 200, 83, 0.7);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.boxs:hover {
+    transform: translateY(-10px); /* Animação mais pronunciada */
+    box-shadow: 0 12px 35px rgba(0, 200, 83, 0.9); /* Sombra mais intensa no hover */
+}
+
+.boxs_image {
+    width: 100%; /* Ocupa a largura total do card */
+    height: 220px; /* Altura fixa para consistência */
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.8);
+    transition: transform 0.3s ease; /* Transição para zoom na imagem */
+}
+
+.boxs:hover .boxs_image {
+    transform: scale(1.05); /* Leve zoom na imagem no hover do card */
+}
+
+.boxs_heart {
+    position: absolute;
+    background-color: #00C853;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.563rem;
+    color: #fefefe;
+    width: 60px; /* Ajustado tamanho */
+    height: 60px; /* Ajustado tamanho */
+    right: 15px; /* Posicionamento ajustado */
+    top: 15px; /* Posicionamento ajustado */
+    border-radius: 50%; /* Torna-o um círculo */
+    box-shadow: 0 0 15px #00C853aa;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boxs_heart:hover {
+    background-color: #009624;
+    box-shadow: 0 0 25px #009624cc;
+    transform: scale(1.1); /* Leve aumento no hover */
+}
+
+.boxs_description {
+    color: #e0e0e0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.15rem; /* Um pouco maior */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+.boxs_rate {
+    margin-top: -5px; /* Aproxima as estrelas da descrição */
+}
+
+.boxs_rate i {
+    color: #00C853;
+    font-size: 1.25rem;
+}
+
+.boxs_price {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento menor */
+    color: #00C853;
+    font-weight: 700;
+    font-size: 1.4rem; /* Preço mais destacado */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+/* Botão "Adicionar ao Carrinho" (assumindo que você o terá no HTML) */
+.boxs_add_cart {
+    background-color: #00C853;
+    color: #121212; /* Texto escuro para contraste */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px; /* Espaçamento do preço */
+    display: flex; /* Para centralizar o ícone e texto se houver */
+    align-items: center;
+    gap: 8px;
+}
+
+.boxs_add_cart:hover {
+    background-color: #00B04F;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 200, 83, 0.5);
+}
+
+/* --- Responsividade --- */
+@media screen and (min-width: 769px) { /* Adicionado para grid em desktop */
+    #allbox {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid responsivo */
+        display: grid; /* Mudar para grid para controle de colunas */
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    #menu {
+        padding-top: 60px; /* Ajuste para tablets */
+    }
+
+    #menu_filters {
+        width: 95%;
+        padding: 15px 10px;
+        gap: 20px;
+    }
+
+    .filter-group {
+        width: 100%; /* Grupos podem ocupar toda a largura */
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    #allbox {
+        gap: 25px;
+    }
+
+    .boxs {
+        width: calc(50% - 15px); /* Duas colunas com espaçamento */
+        max-width: none; /* Remove max-width para calc funcionar */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #menu .section_title {
+        font-size: 2.8rem;
+    }
+    #menu .section_subtitle {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+
+    #menu_filters {
+        flex-direction: column; /* Filtros um abaixo do outro */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .filter-group {
+        align-items: flex-start; /* Alinha os títulos à esquerda no mobile */
+        width: 100%;
+    }
+
+    .filter-group-title {
+        text-align: left;
+        width: 100%;
+    }
+
+    .filter-buttons {
+        justify-content: flex-start; /* Alinha botões à esquerda no mobile */
+        width: 100%;
+    }
+
+    #allbox {
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .boxs {
+        width: 100%; /* Uma coluna no mobile */
+        max-width: 350px; /* Volta a ter um max-width para não ficar muito largo */
+    }
+
+    .boxs_image {
+        height: 200px; /* Um pouco menor no mobile */
+    }
+
+    .boxs_add_cart {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #menu .section_title {
+        font-size: 2.2rem;
+    }
+    #menu .section_subtitle {
+        font-size: 0.95rem;
+    }
+    .boxs_description {
+        font-size: 1rem;
+    }
+    .boxs_price {
+        font-size: 1.2rem;
+    }
+    .boxs_add_cart {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Dentro de #menu_filters ou como um elemento separado antes de #allbox */
+#search_container {
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 30px; /* Espaçamento abaixo do campo de busca */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espaço entre o input e o ícone, se houver */
+}
+
+#search_input {
+    width: 100%;
+    max-width: 500px; /* Limita a largura do campo de busca */
+    padding: 12px 20px;
+    border: 1px solid #444; /* Borda mais escura */
+    background-color: #272727; /* Fundo do input */
+    color: var(--text-light); /* Texto claro */
+    border-radius: 10px; /* Bordas arredondadas */
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    outline: none; /* Remove outline no focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search_input::placeholder {
+    color: #888; /* Cor do placeholder */
+}
+
+#search_input:focus {
+    border-color: var(--primary-green); /* Borda verde no focus */
+    box-shadow: 0 0 15px var(--shadow-green-medium); /* Sombra verde no focus */
+}
+

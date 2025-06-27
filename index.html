@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" type="image/x-icon" href="src/images/logo_black.png">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/header.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Busk Web - Sua Loja Fitness</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="#home" id="nav_logo">
+                <img src="/src/images/logo.png" alt="Busk Web Logo">Busk Web
+            </a>
+
+            <ul id="nav_list">
+                <li class="nav_item">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#menu">Catálogo</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#location">Localização</a>
+                </li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="#" class="login-btn">Entrar</a>
+                <button id="theme_toggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i> </button>
+                <button id="mobile_btn">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav_item">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#menu">Catálogo</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+                <li class="nav_item active">
+                    <a href="#location">Localização</a>
+                </li>
+            </ul>
+            <div class="mobile-menu-buttons">
+                <a href="#" class="login-btn">Entrar</a>
+                <button id="mobile-theme-toggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <a href="/carrinhoCompras.html" class="btn btn_default">Peça Aqui</a>
+        </div>
+
+    </header>
+
+    <main id="content">
+        <section id="home" class="sport-section">
+            <div class="home-background-carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="src/images/home_background_1_large.webp" type="image/webp"
+                                media="(min-width: 1200px)">
+                            <source srcset="src/images/home_background_1_medium.webp" type="image/webp"
+                                media="(min-width: 768px)">
+                            <source srcset="src/images/home_background_1_small.webp" type="image/webp">
+                            <img src="src/images/home_background_1_large.webp" alt="Pessoa treinando na academia"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="src/images/home_background_2_large.jpeg" type="image/webp"
+                                media="(min-width: 1200px)">
+                            <source srcset="src/images/home_background_2_medium.jpeg" type="image/webp"
+                                media="(min-width: 768px)">
+                            <source srcset="src/images/home_background_2_small.jpeg" type="image/webp">
+                            <img src="src/images/home_background_2_large.jpeg" alt="Equipamentos de academia"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="src/images/home_background_3_large.png" type="image/webp"
+                                media="(min-width: 1200px)">
+                            <source srcset="src/images/home_background_3_medium.png" type="image/webp"
+                                media="(min-width: 768px)">
+                            <source srcset="src/images/home_background_3_small.png" type="image/webp">
+                            <img src="src/images/home_background_3_large.png" alt="Atleta em ação" loading="lazy">
+                        </picture>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <div id="cta">
+                <h1 class="highlight-text-sport">BORA TREINAR!</h1>
+                <h1 class="title">
+                    Sua loja fitness <span style="color: #00C853;">completa</span>
+                </h1>
+                <p class="description">
+                    Canecas, roupas e acessórios. Qualidade e preço justo para o seu treino.
+                </p>
+                <div id="cta_buttons">
+                    <a href="#menu" class="btn btn-primary">Ver catálogo</a>
+                    <a href="tel:+5511964217291" id="phone_button" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i>
+                        (11) 96421-7291
+                    </a>
+                </div>
+                <div class="social_media_buttons">
+                    <a href="http://youtube.com/2" target="_blank" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tiochicomarreta?igsh=Y3VuejhwMWNoZjFn" target="_blank"
+                        aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@tiochicomarreta?is_from_webapp=1&sender_device=pc" target="_blank"
+                        aria-label="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section id="menu">
+        <h2 class="section_title">Nosso <span style="color: #00C853;">Catálogo</span></h2>
+        <p class="section_subtitle">Encontre os melhores produtos para otimizar seu treino e estilo de vida fitness.</p>
+
+        <div id="search_container">
+            <input type="text" id="search_input" placeholder="Pesquisar produtos por nome...">
+        </div>
+
+        <div id="menu_filters">
+            <div class="filter-group">
+                <h3 class="filter-group-title">Categorias</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="roupas">Roupas</button>
+                    <button class="filter-btn" data-filter="canecas">Canecas</button>
+                    <button class="filter-btn" data-filter="acessorios">Acessórios</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3 class="filter-group-title">Ordenar por</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-sort="default">Padrão</button>
+                    <button class="filter-btn" data-sort="price-asc">Preço: Menor</button>
+                    <button class="filter-btn" data-sort="price-desc">Preço: Maior</button>
+                    <button class="filter-btn" data-sort="popularity">Popularidade</button>
+                    <button class="filter-btn" data-sort="newest">Novidades</button>
+                    <button class="filter-btn" data-sort="alpha-asc">A-Z</button> <button class="filter-btn"
+                        data-sort="alpha-desc">Z-A</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="allbox">
+            <div class="boxs" data-category="acessorios" data-price="99.90" data-popularity="5" data-newest="true">
+                <img class="boxs_image" src="src/images/luvas/luvaRosa.jpeg" alt="Luvas de treino">
+                <div class="boxs_heart"><i class='bx bxs-heart'></i></div>
+                <h4 class="boxs_description">luva Rosa</h4>
+                <div class="boxs_rate">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <div class="boxs_price">
+                    R$ 99,90
+                </div>
+                <button class="boxs_add_cart">
+                    <i class='bx bx-cart-add'></i> Adicionar
+                </button>
+            </div>
+
+            <div class="boxs" data-category="acessorios" data-price="99.90" data-popularity="8" data-newest="true">
+                <img class="boxs_image" src="src/images/luvas/luvaRoxa.jpeg" alt="Luvas de treino">
+                <div class="boxs_heart"><i class='bx bxs-heart'></i></div>
+                <h4 class="boxs_description">luva Roxa</h4>
+                <div class="boxs_rate">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <div class="boxs_price">
+                    R$ 99,90
+                </div>
+                <button class="boxs_add_cart">
+                    <i class='bx bx-cart-add'></i> Adicionar
+                </button>
+            </div>
+
+            <div class="boxs" data-category="acessorios" data-price="99.90" data-popularity="14" data-newest="true">
+                <img class="boxs_image" src="src/images/luvas/luvaPreta.jpeg" alt="luva de treino">
+                <div class="boxs_heart"><i class='bx bxs-heart'></i></div>
+                <h4 class="boxs_description">luva Preta</h4>
+                <div class="boxs_rate">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <div class="boxs_price">
+                    R$ 99,90
+                </div>
+                <button class="boxs_add_cart">
+                    <i class='bx bx-cart-add'></i> Adicionar
+                </button>
+            </div>
+
+            <div class="boxs" data-category="canecas" data-price="50.99" data-popularity="4" data-newest="true">
+                <img class="boxs_image" src="src/images/garrafas/garrafaLaranja.jpeg" alt="garrafa laranja">
+                <div class="boxs_heart"><i class='bx bxs-heart'></i></div>
+                <h4 class="boxs_description">Garrafa Laranja</h4>
+                <div class="boxs_rate">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <div class="boxs_price">
+                    R$ 50,99
+                </div>
+                <button class="boxs_add_cart">
+                    <i class='bx bx-cart-add'></i> Adicionar
+                </button>
+            </div>
+
+            <div class="boxs" data-category="canecas" data-price="50.00" data-popularity="7" data-newest="true">
+                <img class="boxs_image" src="src/images/garrafas/garrafaBranca.jpeg" alt="Garrafa Branca">
+                <div class="boxs_heart"><i class='bx bxs-heart'></i></div>
+                <h4 class="boxs_description">Garrafa Branca</h4>
+                <div class="boxs_rate">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <div class="boxs_price">
+                    R$ 50,00
+                </div>
+                <button class="boxs_add_cart">
+                    <i class='bx bx-cart-add'></i> Adicionar
+                </button>
+            </div>
+
+            <div class="boxs" data-category="canecas" data-price="49.90" data-popularity="5" data-newest="true">
+                <img class="boxs_image" src="src/images/garrafas/garrafaRosa.jpeg" alt="Garrafa Rosa">
+                <div class="boxs_heart"><i class='bx bxs-heart'></i></div>
+                <h4 class="boxs_description">Garrafa Rosa</h4>
+                <div class="boxs_rate">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <div class="boxs_price">
+                    R$ 49,90
+                </div>
+                <button class="boxs_add_cart">
+                    <i class='bx bx-cart-add'></i> Adicionar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="catalog_button_container">
+        <a href="/carrinhoCompras.html" class="btn btn-primary btn-full-catalog">
+            <i class="fas fa-tags"></i> Ver Catálogo Completo
+        </a>
+    </div>
+
+    </section>
+
+    <section id="testimonials">
+        <div id="testimonials_content">
+            <h2 class="section_subtitle">O que dizem nossos clientes</h2>
+            <div id="testimonials_carousel">
+                <div id="feedbacks">
+                    <div class="feedback">
+                        <img src="src/images/avatar.png" alt="Avatar do Cliente 1" class="feedback_avatar">
+                        <div class="feedback_content">
+                            <p>Ótimo profissional, atencioso, tratamento igual para todos e personalizados com
+                                excelência, parabéns 👏👏👏👍</p>
+                        </div>
+                    </div>
+                    <div class="feedback">
+                        <img src="src/images/avatar2.png" alt="Avatar do Cliente 2" class="feedback_avatar">
+                        <div class="feedback_content">
+                            <p>Melhor personal que já vi trabalhar em academia, super focado no desenvolvimento dos
+                                alunos</p>
+                        </div>
+                    </div>
+                    <div class="feedback">
+                        <img src="src/images/avatar3.png" alt="Avatar do Cliente 3" class="feedback_avatar">
+                        <div class="feedback_content">
+                            <p>PERSONAL é muito atencioso com a aluno, principalmente quando vc está começando, super
+                                recomendo ⭕️🦅</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="location-section" class="sport-section">
+        <div class="container">
+            <h2 class="section-title">Encontre-nos e Calcule Sua Rota!</h2>
+
+            <div class="location-content-wrapper">
+                <div class="location-map-info card-sport">
+                    <h3>Nossa Unidade</h3>
+                    <div id="google-map-embed" class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.6830155822998!2d-46.45587657231926!3d-23.49909374194562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce61f14eadddc7%3A0x352bd905d192e4c7!2sPersonal%20Bora%20Comigo!5e0!3m2!1spt-BR!2sbr!4v1749579848751!5m2!1spt-BR!2sbr"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="address-details">
+                        <p>Av. Ten. Laudelino F.do Amaral, 100</p>
+                        <p>Vila Jacuí, São Paulo - SP - CEP: 08060-000</p>
+                        <p>Telefone: (11) 96421-7291</p>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Ten.+Laudelino+F.+do+Amaral,+100+-+Vila+Jacu%C3%AD,+S%C3%A3o+Paulo+-+SP,+08060-000"
+                            target="_blank" class="btn btn-primary btn-get-directions">Obter Rotas <i
+                                class="fas fa-route"></i></a>
+                    </div>
+                </div>
+
+                <div class="location-side-content">
+                    <div class="freight-calculator-section card-sport">
+                        <h3>Calcule Seu Frete</h3>
+                        <p>Para entrega de produtos ou kits.</p>
+                        <div class="input-group">
+                            <label for="cep-input">CEP de Destino:</label>
+                            <input type="text" id="cep-input" placeholder="Ex: 01234-567" maxlength="9">
+                            <button id="calculate-freight-btn" class="btn btn-secondary">Calcular Frete <i
+                                    class="fas fa-truck"></i></button>
+                        </div>
+                        <div id="freight-result" class="freight-result"></div>
+                    </div>
+
+                    <div class="location-photo-gallery card-sport">
+                        <h3>Nosso Espaço</h3>
+                        <div class="gallery-grid">
+                            <img src="https://via.placeholder.com/300x200/4CAF50/FFFFFF?text=Academia+Foto+1"
+                                alt="Academia - Área de Musculação" class="gallery-item"
+                                data-full-src="https://via.placeholder.com/800x600/4CAF50/FFFFFF?text=Academia+Foto+1">
+                            <img src="https://via.placeholder.com/300x200/66BB6A/FFFFFF?text=Academia+Foto+2"
+                                alt="Academia - Sala de Cardio" class="gallery-item"
+                                data-full-src="https://via.placeholder.com/800x600/66BB6A/FFFFFF?text=Academia+Foto+2">
+                            <img src="https://via.placeholder.com/300x200/8BC34A/FFFFFF?text=Academia+Foto+3"
+                                alt="Academia - Equipamentos Modernos" class="gallery-item"
+                                data-full-src="https://via.placeholder.com/800x600/8BC34A/FFFFFF?text=Academia+Foto+3">
+                            <img src="https://via.placeholder.com/300x200/388E3C/FFFFFF?text=Academia+Foto+4"
+                                alt="Academia - Vista Geral" class="gallery-item"
+                                data-full-src="https://via.placeholder.com/800x600/388E3C/FFFFFF?text=Academia+Foto+4">
+                        </div>
+                        <div id="lightbox" class="lightbox">
+                            <span class="close-btn">×</span>
+                            <img class="lightbox-content" id="lightbox-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div id="footer_content">
+            <div id="footer_logo">
+                <img src="src/images/logo.png" alt="Busk Web Logo">
+            </div>
+
+            <ul id="footer_links">
+                <li>
+                    <h3>Nossos Produtos</h3>
+                </li>
+                <li><a href="#link1">Roupas Fitness</a></li>
+                <li><a href="#link2">Acessórios</a></li>
+                <li><a href="#link3">Canecas</a></li>
+                <li><a href="#link4">Garrafas Térmicas</a></li>
+            </ul>
+
+            <ul id="footer_contact">
+                <li>
+                    <h3>Contato</h3>
+                </li>
+                <li><a href="tel:+5511964217291"><i class="fas fa-phone-alt"></i> (11) 96421-7291</a></li>
+                <li><a href="mailto:contato@sportflow.com"><i class="fas fa-envelope"></i> contato@BuskWeb.com</a>
+                </li>
+                <li><a href="#location-section"><i class="fas fa-map-marker-alt"></i> Encontre-nos</a></li>
+            </ul>
+
+            <div id="footer_social_media">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/tiochicomarreta/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/people/Tio-Chico-Marreta/100084436916085/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/5511964217291" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer_bottom">
+            <p id="copyright">© 2025 Busk   Web. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="src/jsjavascript/script.js"></script>
+</body>
+
+</html>

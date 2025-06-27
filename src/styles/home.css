@@ -1,0 +1,608 @@
+#home {
+    display: flex;
+    position: relative;
+    background-color: #121212;
+    color: #f0f0f0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+}
+
+/* Estilo para o carrossel de fundo atlético e moderno */
+.home-background-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Coloca o carrossel atrás do conteúdo principal */
+}
+
+.home-background-carousel .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* background-size e background-position não são diretamente aplicáveis quando usamos <picture> e <img> dentro do slide para o fundo */
+    filter: brightness(0.6);
+    /* Escurece as imagens para o texto ficar mais legível */
+}
+
+/* NOVO: Garante que a tag <picture> ocupe 100% do slide */
+.home-background-carousel .swiper-slide picture {
+    position: absolute;
+    /* Posiciona a tag <picture> para ocupar o slide */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; já foi removido pois não é necessário aqui, a imagem é o próprio fundo do slide */
+}
+
+
+.home-background-carousel .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* A imagem cobre todo o contêiner, cortando se necessário */
+    object-position: center;
+    /* Centraliza a imagem dentro do contêiner */
+}
+
+
+/* Opcional: Estilo para a paginação e navegação do Swiper (se você quiser visível) */
+.home-background-carousel .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.6;
+}
+
+.home-background-carousel .swiper-pagination-bullet-active {
+    background: #00C853;
+    /* Cor verde para o bullet ativo */
+    opacity: 1;
+}
+
+.home-background-carousel .swiper-button-next,
+.home-background-carousel .swiper-button-prev {
+    color: #fff;
+    /* Cor das setas de navegação */
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.home-background-carousel .swiper-button-next:hover,
+.home-background-carousel .swiper-button-prev:hover {
+    opacity: 1;
+}
+
+
+#cta {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    z-index: 2;
+    /* Garante que o conteúdo CTA fique acima do carrossel */
+    text-align: left;
+    padding: 0 4%;
+}
+
+/* Estilo para o texto "Bora Treinar!" */
+.highlight-text-sport {
+    font-size: 8rem;
+    color: #00C853;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    line-height: 1;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+#cta .title {
+    font-size: 3.5rem;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+#cta .title span {
+    color: #00C853;
+}
+
+#cta .description {
+    font-size: 1.25rem;
+    color: #cfcfcf;
+    line-height: 1.6;
+}
+
+#cta_buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#cta_buttons a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#phone_button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #272727;
+    padding: 10px 14px;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 200, 83, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#phone_button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+#phone_button button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#catalog_button_container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: auto;
+    right: auto;
+    padding: 0 8%;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+/* ... e os media queries para #catalog_button_container ... */
+@media screen and (max-width: 768px) {
+    #catalog_button_container {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .btn-full-catalog {
+        /* Ajustes específicos para mobile na nova classe */
+        width: 90%;
+        max-width: 300px;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Responsivo */
+@media screen and (max-width: 1170px) {
+    #home {
+        flex-direction: column;
+        padding: 40px 5%;
+        min-height: 100vh;
+        height: auto;
+        text-align: center;
+    }
+
+    .home-background-carousel {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    #cta {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    #cta .title {
+        font-size: 3rem;
+    }
+
+    .highlight-text-sport {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .highlight-text-sport {
+        font-size: 3rem;
+    }
+
+    #cta .title {
+        font-size: 2.8rem;
+    }
+
+    #cta .description {
+        font-size: 1.1rem;
+    }
+
+    #cta_buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #phone_button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+
+    #cta .title {
+        font-size: 2rem;
+    }
+
+    #cta .description {
+        font-size: 0.95rem;
+    }
+
+    .highlight-text-sport {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* --- SEÇÃO LOCATION (MANTIDA PARA CONTEXTO, SEM GRANDES MUDANÇAS) --- */
+/* --- Seção de Localização (#location-section) --- */
+#location-section {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    padding: 40px 8%;
+    background-color: var(--dark-bg-medium);
+    color: var(--text-light);
+    text-align: center;
+}
+
+#location-section .section-title { /* Alterado de .section_title para .section-title */
+    font-size: 2.5rem;
+    margin-bottom: 30px; /* Aumentei a margem para o título */
+    font-weight: 700;
+    color: var(--primary-green); /* Destaque verde no título */
+    text-shadow: 0 0 10px var(--shadow-green-medium); /* Sombra neon */
+}
+
+.location-content-wrapper {
+    display: flex;
+    gap: 30px; /* Espaço entre as colunas */
+    align-items: flex-start; /* Alinha o topo das colunas */
+    max-width: 1200px; /* Limita a largura total do conteúdo */
+    margin: 0 auto; /* Centraliza o wrapper */
+}
+
+.location-map-info {
+    flex: 2; /* Ocupa mais espaço (ex: 2/3 da largura disponível) */
+    min-width: 300px; /* Largura mínima para o mapa */
+}
+
+.location-side-content {
+    flex: 1; /* Ocupa menos espaço (ex: 1/3 da largura disponível) */
+    display: flex;
+    flex-direction: column; /* Empilha o calculador e a galeria */
+    gap: 30px; /* Espaço entre o calculador e a galeria */
+    min-width: 280px; /* Largura mínima para a barra lateral */
+}
+
+.card-sport { /* Estilo geral para os "cards" */
+    background: linear-gradient(145deg, var(--dark-bg) 0%, var(--dark-bg-light) 100%);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 0 15px var(--shadow-green-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: fit-content; /* Ajusta a altura ao conteúdo */
+}
+
+.card-sport:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px var(--shadow-green-medium);
+}
+
+.card-sport h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-green-light);
+    text-shadow: 0 0 5px rgba(0, 255, 100, 0.3);
+}
+
+/* --- Mapa --- */
+.map-container {
+    width: 100%;
+    height: 400px; /* Altura fixa para o mapa */
+    border-radius: 10px; /* Borda mais arredondada para o mapa */
+    overflow: hidden;
+    box-shadow: 0 0 15px var(--shadow-green-medium); /* Sombra mais destacada para o mapa */
+    transition: box-shadow 0.3s ease;
+}
+
+.map-container:focus-within {
+    box-shadow: 0 0 30px var(--shadow-green-strong); /* Sombra mais intensa ao focar */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.address-details {
+    margin-top: 20px;
+    text-align: left; /* Alinha o texto do endereço à esquerda */
+    line-height: 1.6;
+    color: var(--text-medium);
+}
+
+.address-details p {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.address-details .btn-get-directions {
+    margin-top: 15px;
+    width: 100%; /* Botão ocupa a largura total */
+    padding: 12px 20px; /* Ajuste no padding */
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* --- Calculador de Frete --- */
+.freight-calculator-section {
+    text-align: left; /* Alinha o texto do calculador à esquerda */
+}
+
+.freight-calculator-section p {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    margin-bottom: 15px;
+}
+
+.freight-calculator-section .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.freight-calculator-section label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.freight-calculator-section input[type="text"] {
+    padding: 10px 15px;
+    border: 1px solid var(--primary-green);
+    border-radius: 8px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 255, 100, 0.2);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.freight-calculator-section input[type="text"]:focus {
+    border-color: var(--primary-green-light);
+    box-shadow: 0 0 10px var(--shadow-green-medium);
+}
+
+#calculate-freight-btn {
+    width: 100%; /* Botão ocupa a largura total */
+    padding: 12px 20px;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.freight-result {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    min-height: 20px; /* Garante que tenha espaço para o resultado */
+    text-align: center;
+}
+
+/* --- Galeria de Fotos --- */
+.location-photo-gallery {
+    text-align: left; /* Alinha o título da galeria à esquerda */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 ou 3 colunas responsivas */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 100px; /* Altura fixa para as miniaturas */
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--primary-green-light);
+    box-shadow: 0 0 8px rgba(0, 255, 100, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-green-strong);
+    box-shadow: 0 0 15px var(--shadow-green-medium);
+}
+
+/* --- Lightbox (Visualizador de Imagem Ampliada) --- */
+.lightbox {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000; /* Acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px var(--shadow-green-strong);
+    animation: zoomIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--primary-green);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* --- Responsividade --- */
+@media screen and (max-width: 1024px) { /* Ponto de quebra para layout de coluna única */
+    .location-content-wrapper {
+        flex-direction: column; /* Empilha as colunas em telas menores */
+        align-items: center; /* Centraliza os cards */
+        gap: 40px; /* Aumenta o espaço entre as seções empilhadas */
+    }
+
+    .location-map-info,
+    .location-side-content {
+        flex: none; /* Remove a flexibilidade */
+        width: 100%; /* Ocupa a largura total */
+        max-width: 600px; /* Limita a largura dos cards */
+    }
+
+    .location-map-info .map-container {
+        height: 350px; /* Ajusta a altura do mapa */
+    }
+
+    .location-side-content {
+        flex-direction: column; /* Garante que os itens permaneçam empilhados */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #location-section {
+        padding: 30px 5%; /* Ajusta padding para mobile */
+    }
+
+    #location-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .card-sport {
+        padding: 20px; /* Reduz padding dos cards */
+    }
+
+    .card-sport h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .location-map-info .map-container {
+        height: 300px; /* Reduz mais a altura do mapa */
+        border-radius: 8px;
+    }
+
+    .address-details p,
+    .freight-calculator-section p,
+    .freight-result {
+        font-size: 0.95rem;
+    }
+
+    .freight-calculator-section input[type="text"],
+    .btn-get-directions,
+    #calculate-freight-btn {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Miniaturas menores */
+        gap: 8px;
+    }
+
+    .gallery-item {
+        height: 80px;
+        border-radius: 6px;
+    }
+
+    .lightbox-content {
+        max-width: 90%;
+        max-height: 70%;
+    }
+
+    .close-btn {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #location-section .section-title {
+        font-size: 1.8rem;
+    }
+
+    .location-map-info .map-container {
+        height: 250px; /* Altura mínima para o mapa */
+    }
+
+    .address-details p {
+        font-size: 0.9rem;
+    }
+}
