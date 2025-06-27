@@ -25,7 +25,7 @@ Bem-vindo(a) ao repositório da **BuskWeb Fitness**, uma landing page responsiva
 ## 📁 Estrutura do Projeto
 
 📦 fitforce-landing
-┣ 📂 assets
+┣ 📂 src
 ┃ ┣ 📂 css
 ┃ ┃ ┗ 📄 style.css
 ┃ ┣ 📂 img
